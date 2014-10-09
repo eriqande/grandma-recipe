@@ -271,6 +271,9 @@ Note that by default only the citations in your
 data base that actually got cited will be included
 in the References.
 
+It should be pointed out that you can easily grab
+BibTex-formatted citations from [Google Scholar](http://scholar.google.com).
+
 If you want to use a different bibliography style, browse
 the styles available at [Zotero Style Repository](https://zotero.org/styles).
 You can just download them and put them in your project.
