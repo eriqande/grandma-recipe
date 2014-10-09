@@ -1,5 +1,6 @@
 ---
 title: "Grandma's Glop Recipe"
+csl: molecular-ecology.csl
 output:
   html_document:
     highlight: pygments
@@ -7,6 +8,8 @@ output:
     highlight: pygments
     number_sections: yes
     toc: yes
+  word_document: default
+bibliography: glop.bib
 ---
 
 # Prelude
@@ -43,7 +46,7 @@ always remember used to say:
 
 
 Notice in the above that we used `>` to make a
-block quote and we _also_used two spaces (which,
+block quote and we _also_ used two spaces (which,
 of course, you cannot see!) at the end of each line
 to force a line break.
 
@@ -74,7 +77,8 @@ or tripling, or "pi"-ing the recipe in a
 
 ### Static List version {#static-recipe-list}
 You may want to notice what happens if you don't
-have two "returns" (line endings) above the "##"'s used
+have two "returns" (line endings), which give you 
+at least one empty line, above the "##"'s used
 to make the section header---It doesn't recognize it
 as a header.
 
@@ -176,6 +180,16 @@ mathematical documents should learn to use LaTeX directly.
 Thankfully, you can imbed R code within LaTeX much
 as can be done with R Markdown.
 
+We should perhaps qualify this model with a few statements.
+This model was not empirically derived by rigorous
+tests, rather we guessed at it given similar work done
+on cooking times of Chinook salmon at altitude [@will2014] and 
+for steelhead at different temperatures [@abadia2013]. But please
+bear in mind that we did not account for the issues noted
+by @anderson2014 which arise while using next
+generation oven technology.
+
+
 Clearly, it would be nice to have a table of cooking
 times, $M$, for a few
 values of $T$ and $a$.  Let's take $T\in\{300, 350, 400, 450, 500\}$
@@ -239,3 +253,44 @@ aa <- amts * pi
 Of course, had we wanted to, we could have stuck that
 in a `kable` table, too.
 
+## A note about citations and references
+This seems to be a relatively new feature.  It works almost adequately.
+I don't think it does in-text citations very well.  You can define
+different styles in a "CSL" file which you can put where Rstudio
+can find it (in your project) and then call it out in the YAML
+header.  You apparently can store your citation database in 
+many different ways.  I chose BibTeX because that is what I am
+used to.  The citation data base for this document is `blop.bib`
+which looks like this:
+```{r cat-bibfile, echo=FALSE, comment=NA, size=1}
+cat(readLines("glop.bib"), sep="\n")
+```
+Note that by default only the citations in your
+data base that actually got cited will be included
+in the References.
+
+If you want to use a different bibliography style, browse
+the styles available at [Zotero Style Repository](https://zotero.org/styles).
+You can just download them and put them in your project.
+If we have time, we can try using the _Science_ citation style.
+
+Much more about citations with R markdown can be found 
+[here](http://rmarkdown.rstudio.com/authoring_bibliographies_and_citations.html)
+and you can find plenty of other good links at the bottom
+of this [page](http://rmarkdown.rstudio.com/).
+
+## Making PDF and Word documents
+To make a PDF document you need the TeX typesetting engine.
+It is free, but many of you probably don't have it yet.
+
+To make a Word doc, click the down triangle to the right of
+"Knit HTML" and choose "Knit Word".  Can you figure out what
+changes in the docment? (Again, it is textual and transparent!)
+
+### Changing styles and templates
+Wanna have a different look?  Try the "Gear" link to the
+right of the "Knit HTML" button.  Notice how changes there
+change things in the YAML header. 
+
+
+## References
