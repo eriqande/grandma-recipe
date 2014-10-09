@@ -291,6 +291,11 @@ It is free, but many of you probably don't have it yet.
 To make a Word doc, click the down triangle to the right of
 "Knit HTML" and choose "Knit Word".  Can you figure out what
 changes in the docment? (Again, it is textual and transparent!)
+Contrast that to the Word document itself---do this at your Unix
+command prompt (in the right directory of course):
+```
+cat auto-recipe.docx
+```
 
 ### Changing styles and templates
 Wanna have a different look?  Try the "Gear" link to the
