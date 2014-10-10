@@ -4,6 +4,7 @@ csl: molecular-ecology.csl
 output:
   html_document:
     highlight: pygments
+    theme: journal
   pdf_document:
     highlight: pygments
     number_sections: yes
@@ -14,13 +15,16 @@ bibliography: glop.bib
 
 -----
 
+```{r, include=FALSE}
+# This is a comment about the markdown.
+```
 # Prelude
 
 This is an R Markdown document. Markdown
 is a simple formatting syntax for authoring 
 HTML, PDF, and MS Word documents. For more
 details on using R Markdown 
-see <http://rmarkdown.rstudio.com>.
+see http://rmarkdown.rstudio.com.
 
 When you click the **Knit** button a document
 will be generated that includes both
@@ -97,9 +101,15 @@ mandatory)!
 
 * 2 cups flour
 + 4 eggs
-- 1 Pound of Grandma Gorp:
+- 1 Pound of Grandma Gorp: sdkjfhkj skjhdfkjd dhaskjhdjghs
+  asjkhdfj akdshjsha ksjhf
+  kjshdfkjh 
     + 0.5 pounds raisins
     * 0.5 pounds cashews
+    ```{r, eval=FALSE}
+    # you can indent R code blocks if you want them 
+    # indented to pertain to list items.
+    ```
 
 Notice, the indent level is 4 spaces.  You can use a 
 `-` or a `*` or a `+` to start those list items. In
@@ -131,7 +141,7 @@ There are actually lots of ways to write tables.  See
 [this link](http://rmarkdown.rstudio.com/authoring_pandoc_markdown.html#tables).
 
 What    |   How Much    |    Units
-:------  | :----------:  |  -------:
+:------  | :----:  |  ----:
 Flour   |     2         |   cups
 Eggs    |     4         |   eggs!
 Raisins |    1/2        |   lbs
@@ -227,7 +237,7 @@ First, make an R code block where we declare
 the quantities:
 ```{r quants}
 amts <- c(Flour = 2, Eggs = 4, Raisins = 0.5, Cashews = 0.5)
-mult <- 4 # make a mult-fold version of the recipe
+mult <- 40 # make a mult-fold version of the recipe
 aa <- amts * mult
 ```
 Then access those variables inline in the list.  For example:
@@ -301,6 +311,8 @@ cat auto-recipe.docx
 Wanna have a different look?  Try the "Gear" link to the
 right of the "Knit HTML" button.  Notice how changes there
 change things in the YAML header. 
+
+And let us thank fish [@boughton2009spatial]
 
 
 ## References
